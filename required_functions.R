@@ -6,6 +6,7 @@
 #generic functions
 wetest <- function(sleepmin,sleepmax){
   remDr <- get("remDr",envir=globalenv())
+  remDr$setTimeout(type = "implicit", milliseconds = 5000) ## Dylan change
   webElemtest <-NULL
   while(is.null(webElemtest)){
     webElemtest <- tryCatch({remDr$findElement(using = 'class', "GSpyTable")},
@@ -17,6 +18,7 @@ wetest <- function(sleepmin,sleepmax){
 }
 wetestblock <- function(sleepmin,sleepmax){
   remDr <- get("remDr",envir=globalenv())
+  remDr$setTimeout(type = "implicit", milliseconds = 5000) ## Dylan change
   webElemtest <-NULL
   while(is.null(webElemtest)){
     webElemtest <- tryCatch({remDr$findElement(using = 'class', "replay-log-row")},
